@@ -1,0 +1,12 @@
+.container {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 36px;
+    color: #1a1a1a;
+}

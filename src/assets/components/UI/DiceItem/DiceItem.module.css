@@ -1,0 +1,53 @@
+.diceContainer {
+    padding: 10px;
+    display: flex;
+}
+
+.dice {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f9f9f9;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.dice:hover {
+    transform: scale(1.05);
+}
+.d2, .d4, .d6, .d8, .d10, .d12, .d20, .d100 {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.d2 {
+    background-image: url("../../../../../public/img/d2.svg");
+}
+.d4 {
+    background-image: url("../../../../../public/img/d4.svg");
+    background-position: top;
+}
+.d6 {
+    background-image: url("../../../../../public/img/d6.svg");
+}
+.d8 {
+    background-image: url("../../../../../public/img/d8.svg");
+}
+.d10 {
+    background-image: url("../../../../../public/img/d10-100.svg");
+}
+.d12 {
+    background-image: url("../../../../../public/img/d12.svg");
+}
+
+.d20 {
+    background-image: url("../../../../../public/img/d20.svg");
+}
+.d100 {
+    background-image: url("../../../../../public/img/d10-100.svg");
+    width: 80px;
+    height: 80px;
+}

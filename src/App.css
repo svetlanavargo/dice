@@ -1,0 +1,9 @@
+#root {
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* по горизонтали */
+    align-items: flex-end;   /* прижать к низу */
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
