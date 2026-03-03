@@ -10,8 +10,10 @@
 }
 
 .history {
+    width: 100%;
     display: flex;
     flex-direction: column-reverse; /* новые элементы появляются снизу */
+    align-items: center;
     overflow-y: auto; /* прокрутка при переполнении */
     margin-bottom: 10px; /* отступ от total */
 }
