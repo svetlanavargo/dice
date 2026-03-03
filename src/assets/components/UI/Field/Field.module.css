@@ -1,12 +1,67 @@
 .container {
-    padding: 50px;
     display: flex;
-    justify-content: center;
-    align-items: end;
+    flex-direction: column; /* вертикальное расположение */
+    justify-content: flex-end; /* прижимает последний элемент к низу */
+    align-items: center;
+    height: 70vh; /* или height: 100% родителя */
+    padding: 0 20px 20px 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.history {
+    display: flex;
+    flex-direction: column-reverse; /* новые элементы появляются снизу */
+    overflow-y: auto; /* прокрутка при переполнении */
+    margin-bottom: 10px; /* отступ от total */
+}
+
+.history {
+    flex: 1;
+    overflow-y: auto;
+
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* IE и старые Edge */
+    -ms-overflow-style: none;
+}
+
+/* Chrome, Safari */
+.history::-webkit-scrollbar {
+    display: none;
+}
+
+.historyWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.historyRollValue {
+    font-size: 12px;
+    font-weight: bold;
+    color: darkgray;
+}
+
+.totalHandler {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .total {
     font-weight: bold;
-    font-size: 36px;
+    font-size: 66px;
     color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+}
+
+.historyImg {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
 }

@@ -1,14 +1,54 @@
-
+import ResetBtn from '../../ResetBtn/ResetBtn.tsx';
 import styles from './Field.module.css';
 
-interface Props {
-    total: number
+interface Roll {
+    value: number
+    magnitude: number | 'manual',
+    type?: 'plus' | 'minus'
 }
 
-function Field({total}: Props) {
+interface Props {
+    total: number,
+    history: Roll[],
+    onReset: () => void,
+    onInc: () => void,
+    onDec: () => void
+}
+
+function Field({total, history, onReset, onInc, onDec}: Props) {
+    const hasTotal = total > 0;
+
     return (
         <div className={styles.container}>
-            <span className={styles.total}>{total}</span>
+            <div className={styles.history}>
+                {history.slice().reverse().map((roll, index) => {
+                    let imgName
+
+                    if (roll.magnitude === 'manual') {
+                        imgName = roll.type === 'plus' ? 'plus' : 'minus'
+                    } else if (roll.magnitude === 100) {
+                        imgName = 'd10'
+                    } else {
+                        imgName = `d${roll.magnitude}`
+                    }
+
+                    return (
+                        <div key={index} className={styles.historyWrapper}>
+                            <img className={styles.historyImg} src={`/img/${imgName}.svg`} alt=''/>
+                            <span className={styles.historyRollValue}>{roll.value}</span>
+                        </div>
+                    )
+                })}
+            </div>
+            <div className={styles.totalHandler}>
+                {hasTotal && <ResetBtn onClick={onDec} classBtn='minus'/>}
+                <div className={styles.total}>
+                    <span>{total}</span>
+                </div>
+                {hasTotal && <ResetBtn onClick={onInc} classBtn='plus'/>}
+            </div>
+
+            {hasTotal && <ResetBtn onClick={onReset} classBtn='reset'/>}
         </div>
     )
 }
