@@ -1,14 +1,14 @@
 import type {ReactNode} from 'react'
-import styles from './ResetBtn.module.css';
+import styles from './Btn.module.css';
 
 interface Props {
     onClick: () => void;
     children?: ReactNode;
-    type?: 'button' | 'submit' | 'reset';
+    type?: 'button' | 'submit';
     classBtn: string
 }
 
-function ResetBtn({onClick, children, type, classBtn}: Props) {
+function Btn({onClick, children, type, classBtn}: Props) {
     return (
         <button className={styles[classBtn]} onClick={onClick} type={type}>
             {children}
@@ -16,4 +16,4 @@ function ResetBtn({onClick, children, type, classBtn}: Props) {
     )
 }
 
-export default ResetBtn
+export default Btn

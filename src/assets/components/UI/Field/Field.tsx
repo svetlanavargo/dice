@@ -1,4 +1,4 @@
-import ResetBtn from '../../ResetBtn/ResetBtn.tsx';
+import Btn from '../Btn/Btn.tsx';
 import styles from './Field.module.css';
 
 interface Roll {
@@ -41,14 +41,14 @@ function Field({total, history, onReset, onInc, onDec}: Props) {
                 })}
             </div>
             <div className={styles.totalHandler}>
-                {hasTotal && <ResetBtn onClick={onDec} classBtn='minus'/>}
+                {hasTotal && <Btn onClick={onDec} classBtn='minus'/>}
                 <div className={styles.total}>
                     <span>{total}</span>
                 </div>
-                {hasTotal && <ResetBtn onClick={onInc} classBtn='plus'/>}
+                {hasTotal && <Btn onClick={onInc} classBtn='plus'/>}
             </div>
 
-            {hasTotal && <ResetBtn onClick={onReset} classBtn='reset'/>}
+            {hasTotal && <Btn onClick={onReset} classBtn='reset'/>}
         </div>
     )
 }
