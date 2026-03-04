@@ -1,6 +1,7 @@
 {
   "name": "dice",
   "private": true,
+  "homepage": "/dice",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
